@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphaxine Finance Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .dashboard-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .option-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4361ee;
+            background: rgba(67, 97, 238, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .option-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .option-button {
+            background: #4361ee;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .option-button:hover {
+            background: #3150cc;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-button {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>Alphaxine Finance Dashboard</h1>
+                </div>
+                <button class="back-button" onclick="window.close()">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to ERP
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section>
+                <div class="form-header text-center">
+                    <h2>Choose a Trading Dashboard</h2>
+                    <p>Select the trading analytics dashboard you want to access</p>
+                </div>
+                
+                <div class="dashboard-options">
+                    <!-- NSE Predictor Option -->
+                    <div class="option-card" onclick="window.location.href='/nse-predictor'">
+                        <div class="option-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="option-title">NSE Volume Analyzer</h3>
+                        <p class="option-description">
+                            Analyze first 30-minute trading volume patterns and identify high volume days for NSE stocks.
+                        </p>
+                        <button class="option-button">Open Analyzer</button>
+                    </div>
+                    
+                    <!-- Records Option -->
+                    <div class="option-card" onclick="window.location.href='/records'">
+                        <div class="option-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="option-title">Trading Records</h3>
+                        <p class="option-description">
+                            View and manage your historical trading records, analysis reports, and downloaded data.
+                        </p>
+                        <button class="option-button">View Records</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    &copy; 2025 Alphaxine ERP System. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
